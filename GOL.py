@@ -45,7 +45,8 @@ def handle_generation(unused_addr,args):
     setMatrixCtrl(life)
     print(life)
 
-
+def testRead(unused_addr,args):
+    print(args[0])
 
 # now let's play
 """
@@ -63,9 +64,18 @@ def init(a):
     return a
 
 
-#Main Functionality
+#Initial board
 life = init(life)
+#set matrixctrl
+setMatrixCtrl(life)
+
+message = osc_message_builder.OscMessageBuilder(address = "/start")
+message.add_arg("begin")
+message = message.build()
+client.send(message)
 print(life)
+
+
 #set up server to listen for udp commands
 parser = argparse.ArgumentParser()
 parser.add_argument("--initial",default="random", help="Initial state")
@@ -75,7 +85,7 @@ parser.add_argument("--port",
 type=int, default=5006, help="The port to listen on")
 args = parser.parse_args()
 dispatcher.map("/generate",handle_generation,life)
-
+dispatcher.map("/test",testRead)
 print(args.initial)
 server = osc_server.ThreadingOSCUDPServer(
 (args.ip, args.port), dispatcher)
