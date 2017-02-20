@@ -38,6 +38,31 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-9",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 188.0, 544.0, 62.0, 22.0 ],
+					"style" : "",
+					"text" : "/test hello"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 192.0, 182.0, 34.0, 22.0 ],
+					"style" : "",
+					"text" : "print"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-33",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -57,7 +82,7 @@
 					"numoutlets" : 5,
 					"outlettype" : [ "signal", "signal", "", "float", "list" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 826.0, 391.0, 48.0, 136.0 ],
+					"patching_rect" : [ 829.0, 402.0, 48.0, 136.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "live.gain~",
@@ -375,6 +400,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-1", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-29", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -517,7 +551,7 @@
 					"destination" : [ "obj-31", 1 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 298.5, 501.0, 813.0, 501.0, 813.0, 378.0, 864.5, 378.0 ],
+					"midpoints" : [ 298.5, 501.0, 813.0, 501.0, 813.0, 378.0, 867.5, 378.0 ],
 					"source" : [ "obj-29", 0 ]
 				}
 
@@ -527,7 +561,7 @@
 					"destination" : [ "obj-31", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 298.5, 501.0, 813.0, 501.0, 813.0, 387.0, 835.5, 387.0 ],
+					"midpoints" : [ 298.5, 501.0, 813.0, 501.0, 813.0, 387.0, 838.5, 387.0 ],
 					"source" : [ "obj-29", 0 ]
 				}
 
@@ -577,28 +611,37 @@
 				}
 
 			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-9", 0 ]
+				}
+
+			}
  ],
 		"parameters" : 		{
-			"obj-250::obj-22" : [ "TimeMode", "TimeMode", 1 ],
-			"obj-31" : [ "live.gain~", "live.gain~", 0 ],
-			"obj-235::obj-25" : [ "Cutoff", "Cutoff", 0 ],
-			"obj-234::obj-25" : [ "LPF", "LPF", 0 ],
-			"obj-250::obj-54" : [ "CV1", "CV1", 0 ],
 			"obj-250::obj-55" : [ "power", "power", 0 ],
 			"obj-235::obj-28" : [ "Mix", "Mix", 0 ],
-			"obj-250::obj-23" : [ "CV2", "CV2", 0 ],
-			"obj-250::obj-28" : [ "Res", "Res", 0 ],
+			"obj-234::obj-21" : [ "HPF", "HPF", 0 ],
+			"obj-250::obj-63" : [ "CV3", "CV3", 0 ],
+			"obj-234::obj-1" : [ "Mix[1]", "Mix", 0 ],
 			"obj-250::obj-4" : [ "Offset", "Offset", 0 ],
 			"obj-235::obj-26" : [ "Reflections", "Reflections", 0 ],
-			"obj-235::obj-47" : [ "bypass", "bypass", 0 ],
-			"obj-234::obj-1" : [ "Mix[1]", "Mix", 0 ],
-			"obj-234::obj-7" : [ "bypass[1]", "bypass", 0 ],
-			"obj-235::obj-1" : [ "Time", "Time", 0 ],
-			"obj-250::obj-63" : [ "CV3", "CV3", 0 ],
-			"obj-234::obj-9" : [ "time", "Time", 0 ],
-			"obj-234::obj-28" : [ "Feedback", "Feedback", 0 ],
+			"obj-234::obj-25" : [ "LPF", "LPF", 0 ],
 			"obj-250::obj-20" : [ "Freq", "Freq", 0 ],
-			"obj-234::obj-21" : [ "HPF", "HPF", 0 ]
+			"obj-235::obj-47" : [ "bypass", "bypass", 0 ],
+			"obj-234::obj-9" : [ "time", "Time", 0 ],
+			"obj-250::obj-54" : [ "CV1", "CV1", 0 ],
+			"obj-250::obj-22" : [ "TimeMode", "TimeMode", 1 ],
+			"obj-235::obj-1" : [ "Time", "Time", 0 ],
+			"obj-235::obj-25" : [ "Cutoff", "Cutoff", 0 ],
+			"obj-234::obj-28" : [ "Feedback", "Feedback", 0 ],
+			"obj-250::obj-23" : [ "CV2", "CV2", 0 ],
+			"obj-31" : [ "live.gain~", "live.gain~", 0 ],
+			"obj-250::obj-28" : [ "Res", "Res", 0 ],
+			"obj-234::obj-7" : [ "bypass[1]", "bypass", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
